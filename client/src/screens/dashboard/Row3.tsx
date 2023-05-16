@@ -1,9 +1,20 @@
 import DashboardBox from "@/components/DashboardBox";
+import {
+  useGetKpisQuery,
+  useGetProductsQuery,
+  useGetTransactionsQuery,
+} from "@/state/api";
 import React from "react";
 
-type Props = {};
+const Row3 = () => {
+  const { data: kpiData } = useGetKpisQuery();
+  const { data: productData } = useGetProductsQuery();
+  const { data: transactionData } = useGetTransactionsQuery();
 
-const Row3 = (props: Props) => {
+  // console.log("transactionData:", transactionData);
+
+  //*  Even if we are querying for the same data, in different comp and in the same page, Redux Toolkit will only make one request to the server
+
   return (
     <>
       <DashboardBox gridArea="g"></DashboardBox>
