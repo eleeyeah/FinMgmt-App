@@ -115,24 +115,24 @@ const Row2 = () => {
         </ResponsiveContainer>
       </DashboardBox>
       <DashboardBox gridArea="e">
-        <BoxHeader title="Campaigns and Targets" sideText="+5%" />
-        <FlexBetween mt="0.25rem" gap="1.5rem" pr="1rem">
+        <BoxHeader title="Campaigns and Targets" sideText="+4%" />
+        <FlexBetween gap="1rem" pr="0.25rem">
           <PieChart
-            width={110}
-            height={100}
+            width={70}
+            height={52}
             margin={{
-              top: 0,
+              top: -4,
               right: -10,
-              left: 10,
+              left: 6,
               bottom: 0,
             }}
           >
             <Pie
               stroke="none"
               data={pieData}
-              innerRadius={18}
-              outerRadius={38}
-              paddingAngle={0}
+              innerRadius={9}
+              outerRadius={22}
+              paddingAngle={2}
               dataKey="value"
             >
               {pieData.map((entry, index) => (
@@ -140,23 +140,25 @@ const Row2 = () => {
               ))}
             </Pie>
           </PieChart>
-          <Box ml="-0.7rem" flexBasis="40%" textAlign="center">
-            <Typography variant="h5">Target Sales</Typography>
-            <Typography m="0.3rem 0" variant="h3" color={palette.primary[300]}>
+          <Box m="-0.3rem 0 0rem -1rem" flexBasis="44%" textAlign="center">
+            <Typography variant="h5" m="0.75rem 0 0.15rem 0">
+              Target Sales
+            </Typography>
+            <Typography variant="h4" color={palette.primary[300]}>
               83
             </Typography>
-            <Typography variant="h6">
-              Expected goals to be met by the end of the month.
+            <Typography variant="h6" m="0 0.5rem 0.25rem 0.5rem">
+              Finance goals of the campaign that is desired
             </Typography>
           </Box>
-          <Box flexBasis="40%">
+          <Box flexBasis="56%">
             <Typography variant="h5">Losses in Revenue</Typography>
             <Typography variant="h6">Losses are down 25%</Typography>
             <Typography mt="0.4rem" variant="h5">
               Profit Margins
             </Typography>
             <Typography variant="h6">
-              Margins are up by 18% from last month.
+              Margins are up by 30% from last month.
             </Typography>
           </Box>
         </FlexBetween>

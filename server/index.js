@@ -47,10 +47,10 @@ mongoose
 
         /* Seed the database as needed */
 
-        // await mongoose.connection.db.dropDatabase();
-        // KPI.insertMany(kpis);
-        // Product.insertMany(products);
-        // Transaction.insertMany(transactions);
+        //  await mongoose.connection.db.dropDatabase();
+        //  KPI.insertMany(kpis);
+        //  Product.insertMany(products);
+        //  Transaction.insertMany(transactions);
 
 
     })
