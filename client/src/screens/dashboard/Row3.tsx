@@ -9,7 +9,7 @@ import {
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridCellParams } from "@mui/x-data-grid";
 import { useMemo } from "react";
-import { Cell, Pie, PieChart } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 const Row3 = () => {
   const { palette } = useTheme();
@@ -87,6 +87,9 @@ const Row3 = () => {
 
   return (
     <>
+
+    {/* LIST OF PRODUCTS */}
+
       <DashboardBox gridArea="g">
         <BoxHeader
           title="List of Products"
@@ -120,6 +123,9 @@ const Row3 = () => {
             columns={productColumns}
           />
         </Box>
+
+          {/* RECENT ORDERS */}
+
       </DashboardBox>
       <DashboardBox gridArea="h">
         <BoxHeader
@@ -155,10 +161,13 @@ const Row3 = () => {
           />
         </Box>
       </DashboardBox>
+
+          {/* EXPENSES BREAKDOWN BY CATEGORY */}
+
       <DashboardBox gridArea="i">
         <>
           <BoxHeader title="Expense Breakdown By Category" sideText="+4%" />
-          
+          <ResponsiveContainer width="100%" height="120%" >
           <FlexBetween
             mt="0rem"
             gap="0.5rem"
@@ -170,8 +179,8 @@ const Row3 = () => {
                 <PieChart
                   width={50}
                   height={60}
-                  margin={{ top: 8, right: 0, bottom: 8, left: 0 }}
-                  opacity={0.5}
+                  margin={{ top: 18, right: 0, bottom: 8, left: 0 }}
+                  
                 >
                   <Pie
                     stroke="none"
@@ -180,6 +189,7 @@ const Row3 = () => {
                     outerRadius={21}
                     paddingAngle={0}
                     dataKey="value"
+                    style={{ opacity: 0.6 }}
                   >
                     {data.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={pieColors[index]} />
@@ -192,7 +202,7 @@ const Row3 = () => {
               </Box>
             ))}
           </FlexBetween>
-          
+          </ResponsiveContainer>
         </>
       </DashboardBox>
       <DashboardBox gridArea="j">

@@ -116,54 +116,52 @@ const Row2 = () => {
       </DashboardBox>
       <DashboardBox gridArea="e">
         <BoxHeader title="Campaigns and Targets" sideText="+4%" />
-        <ResponsiveContainer width="100%" height="100%" margin={{bottom:20}}>
-        <FlexBetween gap="2rem" pr="1rem" pb="2rem">
-          <PieChart
-            width={75}
-            height={52}
-            margin={{
-              top: 5,
-              right: -25,
-              left: 6,
-              bottom: 0,
-            }}
-            opacity={0.6}
-          >
-            <Pie
-              stroke="none"
-              data={pieData}
-              innerRadius={9}
-              outerRadius={22}
-              paddingAngle={2}
-              dataKey="value"
+        <ResponsiveContainer width="100%" height="80%">
+          <FlexBetween gap="2rem" pr="1rem" pb="2rem">
+            <PieChart
+              width={75}
+              height={52}
+              margin={{
+                top: 5,
+                right: -25,
+                left: 6,
+                bottom: 0,
+              }}
             >
-              {pieData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={pieColors[index]} />
-              ))}
-            </Pie>
-          </PieChart>
-          <Box m="-0.1rem 0 0rem -1rem" flexBasis="40%" textAlign="center" >
-            <Typography variant="h5" m="0.7rem 0 0.25rem 0">
-              Target Sales
-            </Typography>
-            <Typography variant="h4" color={palette.primary[700]}>
-              83
-            </Typography>
-            <Typography variant="h6" m="0 0.5rem 0.1rem 0.5rem">
-              Finance goals of the campaign that is desired
-            </Typography>
-          </Box>
-          <Box flexBasis="55%" m=""  >
-            <Typography variant="h5">Losses in Revenue</Typography>
-            <Typography variant="h6">Losses are down 25%</Typography>
-            <Typography variant="h5">
-              Profit Margins
-            </Typography>
-            <Typography variant="h6">
-              Margins are up by 30% from last month.
-            </Typography>
-          </Box>
-        </FlexBetween>
+              <Pie
+                stroke="none"
+                data={pieData}
+                innerRadius={9}
+                outerRadius={22}
+                paddingAngle={2}
+                dataKey="value"
+                style={{ opacity: 0.6 }}
+              >
+                {pieData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={pieColors[index]} />
+                ))}
+              </Pie>
+            </PieChart>
+            <Box m="-0.1rem 0 0rem -1rem" flexBasis="40%" textAlign="center">
+              <Typography variant="h5" m="2rem 0 0.25rem 0">
+                Target Sales
+              </Typography>
+              <Typography variant="h4" color={palette.primary[700]}>
+                83
+              </Typography>
+              <Typography variant="h6" m="0 0.5rem 0.1rem 0.5rem">
+                Finance goals of the campaign that is desired
+              </Typography>
+            </Box>
+            <Box flexBasis="60%" mt="1.25rem">
+              <Typography variant="h5">Losses in Revenue</Typography>
+              <Typography variant="h6">Losses are down 25%</Typography>
+              <Typography variant="h5">Profit Margins</Typography>
+              <Typography variant="h6">
+                Margins are up by 30% from last month.
+              </Typography>
+            </Box>
+          </FlexBetween>
         </ResponsiveContainer>
       </DashboardBox>
       <DashboardBox gridArea="f">
