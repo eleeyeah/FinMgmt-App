@@ -206,7 +206,8 @@ const Row3 = () => {
         >
           <Box
             height="10px"
-            bgcolor={palette.primary[600]}
+            bgcolor={palette.primary[400]}
+            style={{ opacity: 0.5 }}
             borderRadius="1rem"
             width="40%"
           ></Box>
