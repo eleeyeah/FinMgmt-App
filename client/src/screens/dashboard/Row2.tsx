@@ -72,10 +72,10 @@ const Row2 = () => {
           <LineChart
             data={operationalExpenses}
             margin={{
-              top: 20,
+              top: 12,
               right: 0,
               left: -10,
-              bottom: 26,
+              bottom: 18,
             }}
           >
             <CartesianGrid vertical={false} stroke={palette.grey[800]} />
@@ -116,13 +116,14 @@ const Row2 = () => {
       </DashboardBox>
       <DashboardBox gridArea="e">
         <BoxHeader title="Campaigns and Targets" sideText="+4%" />
-        <FlexBetween gap="2rem" pr="1rem">
+        <ResponsiveContainer width="100%" height="100%" margin={{bottom:20}}>
+        <FlexBetween gap="2rem" pr="1rem" pb="2rem">
           <PieChart
             width={75}
             height={52}
             margin={{
-              top: 0,
-              right: -20,
+              top: 5,
+              right: -25,
               left: 6,
               bottom: 0,
             }}
@@ -142,17 +143,17 @@ const Row2 = () => {
             </Pie>
           </PieChart>
           <Box m="-0.1rem 0 0rem -1rem" flexBasis="40%" textAlign="center" >
-            <Typography variant="h5" m="0.4rem 0 0.25rem 0">
+            <Typography variant="h5" m="0.7rem 0 0.25rem 0">
               Target Sales
             </Typography>
-            <Typography variant="h4" color={palette.primary[500]}>
+            <Typography variant="h4" color={palette.primary[700]}>
               83
             </Typography>
             <Typography variant="h6" m="0 0.5rem 0.1rem 0.5rem">
               Finance goals of the campaign that is desired
             </Typography>
           </Box>
-          <Box flexBasis="60%" >
+          <Box flexBasis="55%" m=""  >
             <Typography variant="h5">Losses in Revenue</Typography>
             <Typography variant="h6">Losses are down 25%</Typography>
             <Typography variant="h5">
@@ -163,6 +164,7 @@ const Row2 = () => {
             </Typography>
           </Box>
         </FlexBetween>
+        </ResponsiveContainer>
       </DashboardBox>
       <DashboardBox gridArea="f">
         <BoxHeader title="Product Prices vs Expenses" sideText="+5%" />

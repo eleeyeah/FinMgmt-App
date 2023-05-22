@@ -13,7 +13,7 @@ import { Cell, Pie, PieChart } from "recharts";
 
 const Row3 = () => {
   const { palette } = useTheme();
-  const pieColors = [palette.primary[800], palette.primary[300]];
+  const pieColors = [palette.primary[800], palette.tertiary[400]];
 
   const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
@@ -158,8 +158,9 @@ const Row3 = () => {
       <DashboardBox gridArea="i">
         <>
           <BoxHeader title="Expense Breakdown By Category" sideText="+4%" />
+          
           <FlexBetween
-            mt="-0.35rem"
+            mt="0rem"
             gap="0.5rem"
             p="0 2rem 2rem 2rem "
             textAlign="center"
@@ -169,8 +170,8 @@ const Row3 = () => {
                 <PieChart
                   width={50}
                   height={60}
-                  margin={{ top: 14, right: 0, bottom: 0, left: 0 }}
-                  opacity={0.6}
+                  margin={{ top: 8, right: 0, bottom: 8, left: 0 }}
+                  opacity={0.5}
                 >
                   <Pie
                     stroke="none"
@@ -185,12 +186,13 @@ const Row3 = () => {
                     ))}
                   </Pie>
                 </PieChart>
-                <Typography variant="h5" mt="0.1rem ">
+                <Typography variant="h5" margin="0 0 1rem 0" >
                   {data[0].name}{" "}
                 </Typography>
               </Box>
             ))}
           </FlexBetween>
+          
         </>
       </DashboardBox>
       <DashboardBox gridArea="j">
@@ -201,13 +203,14 @@ const Row3 = () => {
         <Box
           height="10px"
           margin="0.7rem 1rem 0.4rem 1rem"
-          bgcolor={palette.primary[800]}
+          bgcolor={palette.primary[300]}
+          style={{ opacity: 0.5 }}
           borderRadius="1rem"
         >
           <Box
             height="10px"
-            bgcolor={palette.primary[400]}
-            style={{ opacity: 0.5 }}
+            bgcolor={palette.primary[800]}
+            style={{ opacity: 1 }}
             borderRadius="1rem"
             width="40%"
           ></Box>
