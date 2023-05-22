@@ -75,7 +75,7 @@ const Row2 = () => {
               top: 20,
               right: 0,
               left: -10,
-              bottom: 55,
+              bottom: 26,
             }}
           >
             <CartesianGrid vertical={false} stroke={palette.grey[800]} />
@@ -116,16 +116,17 @@ const Row2 = () => {
       </DashboardBox>
       <DashboardBox gridArea="e">
         <BoxHeader title="Campaigns and Targets" sideText="+4%" />
-        <FlexBetween gap="1rem" pr="0.25rem">
+        <FlexBetween gap="2rem" pr="1rem">
           <PieChart
-            width={70}
+            width={75}
             height={52}
             margin={{
-              top: -4,
-              right: -10,
+              top: 0,
+              right: -20,
               left: 6,
               bottom: 0,
             }}
+            opacity={0.6}
           >
             <Pie
               stroke="none"
@@ -140,21 +141,21 @@ const Row2 = () => {
               ))}
             </Pie>
           </PieChart>
-          <Box m="-0.3rem 0 0rem -1rem" flexBasis="44%" textAlign="center">
-            <Typography variant="h5" m="0.75rem 0 0.15rem 0">
+          <Box m="-0.1rem 0 0rem -1rem" flexBasis="40%" textAlign="center" >
+            <Typography variant="h5" m="0.4rem 0 0.25rem 0">
               Target Sales
             </Typography>
-            <Typography variant="h4" color={palette.primary[300]}>
+            <Typography variant="h4" color={palette.primary[500]}>
               83
             </Typography>
-            <Typography variant="h6" m="0 0.5rem 0.25rem 0.5rem">
+            <Typography variant="h6" m="0 0.5rem 0.1rem 0.5rem">
               Finance goals of the campaign that is desired
             </Typography>
           </Box>
-          <Box flexBasis="56%">
+          <Box flexBasis="60%" >
             <Typography variant="h5">Losses in Revenue</Typography>
             <Typography variant="h6">Losses are down 25%</Typography>
-            <Typography mt="0.4rem" variant="h5">
+            <Typography variant="h5">
               Profit Margins
             </Typography>
             <Typography variant="h6">
@@ -169,8 +170,8 @@ const Row2 = () => {
           <ScatterChart
             margin={{
               top: 20,
-              right: 25,
-              bottom: 40,
+              right: 20,
+              bottom: 25,
               left: -10,
             }}
           >

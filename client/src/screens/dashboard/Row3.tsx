@@ -13,7 +13,7 @@ import { Cell, Pie, PieChart } from "recharts";
 
 const Row3 = () => {
   const { palette } = useTheme();
-  const pieColors = [palette.primary[800], palette.primary[500]];
+  const pieColors = [palette.primary[800], palette.primary[300]];
 
   const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
@@ -94,8 +94,8 @@ const Row3 = () => {
         />
         <Box
           mt="0.5rem"
-          p="0 0.5rem"
-          height="75%"
+          p=" 0.15rem"
+          height="77%"
           sx={{
             "& .MuiDataGrid-root": {
               color: palette.grey[300],
@@ -128,7 +128,7 @@ const Row3 = () => {
         />
         <Box
           mt="1rem"
-          p="0 0.5rem"
+          p="0 0.25rem"
           height="80%"
           sx={{
             "& .MuiDataGrid-root": {
@@ -158,10 +158,20 @@ const Row3 = () => {
       <DashboardBox gridArea="i">
         <>
           <BoxHeader title="Expense Breakdown By Category" sideText="+4%" />
-          <FlexBetween mt="0.5rem" gap="0.5rem" p="0 3rem" textAlign="center">
+          <FlexBetween
+            mt="-0.35rem"
+            gap="0.5rem"
+            p="0 2rem 2rem 2rem "
+            textAlign="center"
+          >
             {pieChartData?.map((data, i) => (
               <Box key={`${data[0].name}-${i}`}>
-                <PieChart width={50} height={50}>
+                <PieChart
+                  width={50}
+                  height={60}
+                  margin={{ top: 14, right: 0, bottom: 0, left: 0 }}
+                  opacity={0.6}
+                >
                   <Pie
                     stroke="none"
                     data={data}
@@ -175,7 +185,9 @@ const Row3 = () => {
                     ))}
                   </Pie>
                 </PieChart>
-                <Typography variant="h5">{data[0].name} </Typography>
+                <Typography variant="h5" mt="0.1rem ">
+                  {data[0].name}{" "}
+                </Typography>
               </Box>
             ))}
           </FlexBetween>
@@ -188,7 +200,7 @@ const Row3 = () => {
         />
         <Box
           height="10px"
-          margin="1.25rem 1rem 0.4rem 1rem"
+          margin="0.7rem 1rem 0.4rem 1rem"
           bgcolor={palette.primary[800]}
           borderRadius="1rem"
         >
@@ -199,8 +211,9 @@ const Row3 = () => {
             width="40%"
           ></Box>
         </Box>
-        <Typography margin="0 1rem" variant="h6">
-        Cost management initiatives have yielded positive results, leading to improved operational efficiency and higher margins.
+        <Typography margin="0.7rem 1rem" variant="h6">
+          Cost management initiatives have yielded positive results, leading to
+          improved operational efficiency and higher margins.
         </Typography>
       </DashboardBox>
     </>

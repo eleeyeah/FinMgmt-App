@@ -74,37 +74,37 @@ const Row1 = () => {
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}
-            height={400}
+            height={600}
             data={revenueExpenses}
             margin={{
-              top: 15,
+              top: 10,
               right: 25,
               left: -10,
-              bottom: 60,
+              bottom: 32,
             }}
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor={palette.primary[300]}
+                  stopColor={palette.primary[700]}
                   stopOpacity={0.5}
                 />
                 <stop
                   offset="95%"
-                  stopColor={palette.primary[300]}
+                  stopColor={palette.primary[800]}
                   stopOpacity={0}
                 />
               </linearGradient>
               <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor={palette.primary[300]}
+                  stopColor={palette.tertiary[500]}
                   stopOpacity={0.5}
                 />
                 <stop
                   offset="95%"
-                  stopColor={palette.primary[300]}
+                  stopColor={palette.secondary[900]}
                   stopOpacity={0}
                 />
               </linearGradient>
@@ -124,16 +124,16 @@ const Row1 = () => {
             <Area
               type="monotone"
               dataKey="revenue"
-              dot={true}
-              stroke={palette.primary.main}
+              dot={false}
+              stroke={palette.primary[600]}
               fillOpacity={1}
               fill="url(#colorRevenue)"
             />
             <Area
               type="monotone"
               dataKey="expenses"
-              dot={true}
-              stroke={palette.primary.main}
+              dot={false}
+              stroke={palette.tertiary[600]}
               fillOpacity={1}
               fill="url(#colorExpenses)"
             />
@@ -153,10 +153,10 @@ const Row1 = () => {
               top: 20,
               right: 0,
               left: -10,
-              bottom: 55,
+              bottom: 32,
             }}
           >
-            <CartesianGrid vertical={false} stroke={palette.grey[800]} />
+            <CartesianGrid vertical={false} stroke={palette.grey[600]} />
             <XAxis
               dataKey="name"
               tickLine={false}
@@ -176,7 +176,7 @@ const Row1 = () => {
               style={{ fontSize: "10px" }}
             />
             <Tooltip />
-            <Legend height={20} wrapperStyle={{ margin: "0 0 10px 0" }} />
+            <Legend height={20} wrapperStyle={{ margin: "0px 10px" }} />
             <Line
               yAxisId="left"
               type="monotone"
@@ -207,23 +207,10 @@ const Row1 = () => {
               top: 17,
               right: 15,
               left: -5,
-              bottom: 58,
+              bottom: 32,
             }}
           >
-            <defs>
-              <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0}
-                />
-              </linearGradient>
-            </defs>
+           
             <CartesianGrid vertical={false} stroke={palette.grey[800]} />
             <XAxis
               dataKey="name"
